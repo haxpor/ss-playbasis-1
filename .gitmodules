@@ -1,0 +1,6 @@
+[submodule "ssp1-jekyll"]
+	path = ssp1-jekyll
+	url = git@github.com:haxpor/ssp1-jekyll.git
+[submodule "ssp1-fastlane"]
+	path = ssp1-fastlane
+	url = https://github.com/haxpor/ssp1-fastlane
