@@ -116,9 +116,35 @@ With this set up, you can set Payload URL on *Set up Webhook on Github* section 
 * The script we've set up will do its work pulling in the latest source code, and build a Jekyll site onto directory that can be accessible from outside.
 * All done.
 
+## Fastlane
+
+We will use [Fastlane](https://fastlane.tools/) to help automate our iOS workflow here.
+
+* Install Fastlane via `sudo gem install fastlane`. *I've use version 2.5.0 for demo project and this writing.*
+* Create a new iOS project via XCode.
+   Probably you will need to create a simple of 2 pages that can switch to each other, some text fields and also localize in into at least 2 languages. This is for purpose of testing.
+* Go to your project directory.
+* Execute `fastlane init`. It will present you will a series of question. Enter it appropriately, and say `yes` to all questions is okay too.
+* Next execute `fastlane snapshot init`. Snapshot is for taking screenshots during UI tests process. We will need this as part of our flow too.
+* Both commands will initialize the necessary things for our project.
+* Basically you will edit `fastlane/FastFile` and `fastlane/SnapFile` to automate your process. See example at [FastFile](https://gist.github.com/haxpor/a3c1da624c2256a138e5e6d0e48742c9), and [Snapfile](https://gist.github.com/haxpor/54e82fdb1c8d6f574ee69f129867496e).
+
+## agvtool - iOS
+
+agvtool is a tool from Apple that can be used to bump version number both normal version number (build number) and marketing version number (App Store).
+
+Example usage is as follows
+
+* `agvtool next-version -all` to bump version number (build number)
+* `agvtool new-marketing-version 1.0.1` to set marketing version number to 1.0.1
+* `agvtool what-version` to get the current version number (build number)
+* `agvtool what-marketing-version` to get the current marketing version number
+
 # Reference
 
 * [A successful Git branching model](http://nvie.com/posts/a-successful-git-branching-model/)
 * [Jekyll](http://jekyllrb.com/)
 * [Jasmine](https://jasmine.github.io/)
 * [Fastlane](https://fastlane.tools/)
+* [Setting up UI Tests and Fastlane Snapshot](http://ladyandtech.blogspot.com/2016/08/setting-up-ui-tests-and-fastlane.html)
+* [agvtool from Apple](https://developer.apple.com/library/content/qa/qa1827/_index.html)
