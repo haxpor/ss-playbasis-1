@@ -129,6 +129,8 @@ We will use [Fastlane](https://fastlane.tools/) to help automate our iOS workflo
 * Both commands will initialize the necessary things for our project.
 * Basically you will edit `fastlane/FastFile` and `fastlane/SnapFile` to automate your process. See example at [FastFile](https://gist.github.com/haxpor/a3c1da624c2256a138e5e6d0e48742c9), and [Snapfile](https://gist.github.com/haxpor/54e82fdb1c8d6f574ee69f129867496e).
 
+If you need more information, steps and want to see visual result, check out my blog post [here](https://wasin.io/blog/2017/01/15/hands-on-fastlane.html).
+
 ## agvtool - iOS
 
 agvtool is a tool from Apple that can be used to bump version number both normal version number (build number) and marketing version number (App Store).
